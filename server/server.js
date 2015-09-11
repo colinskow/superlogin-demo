@@ -30,9 +30,9 @@ app.use(express.static(path.join(__dirname, '../client/www')));
 app.use(logger('dev'));
 
 app.use(function(req, res, next) {
-  console.log(req.get('X-Forwarded-Protocol'));
+  console.log(req.get('X-Forwarded-Proto'));
   console.log(req.protocol);
-  var protocol = req.get('X-Forwarded-Protocol') || req.protocol + '://';
+  var protocol = req.get('X-Forwarded-Proto') || req.protocol + '://';
   console.log(protocol);
   next();
 });
