@@ -41,7 +41,7 @@
     "passport-linkedin-oauth2": "^1.2.1",
     "passport-windowslive": "^1.0.1",
     "serve-favicon": "~2.2.0",
-    "superlogin": "^0.1.4",
+    "superlogin": "^0.1.5",
     "yamljs": "~0.2.3"
   },
   "devDependencies": {
