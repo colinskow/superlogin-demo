@@ -1,6 +1,6 @@
 {
   "name": "superlogin-demo",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A sample single page app using SuperLogin, AngularJS, and PouchDB",
   "scripts": {
     "postinstall": "node ./node_modules/bower/bin/bower install",
