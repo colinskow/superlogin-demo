@@ -1,7 +1,7 @@
 {
   "name": "superlogin-demo",
   "version": "0.1.0",
-  "description": "A sample single page app using SuperLogin and AngularJS",
+  "description": "A sample single page app using SuperLogin, AngularJS, and PouchDB",
   "scripts": {
     "postinstall": "node ./node_modules/bower/bin/bower install",
     "start": "node ./server/bin/www"
@@ -9,7 +9,13 @@
   "keywords": [
     "superlogin",
     "angularjs",
-    "angular-material"
+    "angular",
+    "angular-material",
+    "pouchdb",
+    "couchdb",
+    "cloudant",
+    "login",
+    "authentication"
   ],
   "repository": {
     "type": "git",
