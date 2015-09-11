@@ -42,9 +42,9 @@ angular.module('superloginDemo',
       url: "^/password-reset/:token",
       templateUrl: "src/token/reset.html",
       controller: 'ResetPasswordCtrl',
-        data: {
-          title: 'Reset Password'
-        }
+      data: {
+        title: 'Reset Password'
+      }
     })
 
     .state('confirm', {
@@ -59,18 +59,21 @@ angular.module('superloginDemo',
       resolve: {
         authenticate: authenticate
       },
-        data: {
-          title: 'SuperLogin Todos'
-        }
+      data: {
+        title: 'SuperLogin Todos'
+      }
     })
 
     .state('navbar.profile', {
       url: '^/profile',
       templateUrl: 'src/profile/profile.html',
       controller: 'ProfileCtrl',
-        data: {
-          title: 'Profile'
-        }
+      resolve: {
+        authenticate: authenticate
+      },
+      data: {
+        title: 'Profile'
+      }
     });
 
     // if none of the above states are matched, use this as the fallback
