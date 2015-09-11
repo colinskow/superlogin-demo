@@ -1,6 +1,6 @@
 'use strict';
 
-var BPromise = require('Bluebird');
+var BPromise = require('bluebird');
 var YAML = require('yamljs');
 
 module.exports = function(superlogin) {
