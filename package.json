@@ -26,6 +26,7 @@
   "engines": {
     "node": "4.0.x"
   },
+  "cacheDirectories": ["node_modules", "client/www/lib"],
   "dependencies": {
     "bluebird": "~2.9.34",
     "body-parser": "~1.12.0",
