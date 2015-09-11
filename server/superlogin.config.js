@@ -77,7 +77,7 @@ module.exports = {
       credentials: {
         clientID: process.env.GITHUB_CLIENTID,
         clientSecret: process.env.GITHUB_CLIENTSECRET,
-        scope: ['user']
+        scope: ['user:email']
       }
     },
     windowslive: {
