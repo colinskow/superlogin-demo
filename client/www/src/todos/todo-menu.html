@@ -1,0 +1,19 @@
+<md-menu>
+  <md-button class="md-icon-button" aria-label="options" ng-click="$mdOpenMenu()">
+    <md-icon>more_vert</md-icon>
+  </md-button>
+  <md-menu-content width="4">
+    <md-menu-item>
+      <md-button ng-click="editDialog(item)">
+        <md-icon md-menu-align-target>edit</md-icon>
+        EDIT
+      </md-button>
+    </md-menu-item>
+    <md-menu-item>
+      <md-button ng-click="remove(item)">
+        <md-icon md-menu-align-target>delete</md-icon>
+        DELETE
+      </md-button>
+    </md-menu-item>
+  </md-menu-content>
+</md-menu>

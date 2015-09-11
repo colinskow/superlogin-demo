@@ -1,0 +1,24 @@
+<md-progress-linear md-mode="indeterminate" ng-show="syncStatus.active"></md-progress-linear>
+<md-button class="md-fab md-fab-bottom-right" aria-label="Add Todo" ng-click="editDialog(null)">
+  <md-icon md-font-set="material-icons" aria-label="Add Todo">add</md-icon>
+</md-button>
+
+<md-content layout="row" layout-align="center start" class="bg-grey">
+  <md-card flex-gt-md="60" flex-md="80" flex-sm="100" class="bottom-space">
+    <md-list>
+      <md-list-item ng-if="!todos.length && syncStatus.ready"> 
+        <p><strong>Oh NO, there's nothing to do! You Better add something.</strong></p> 
+      </md-list-item>
+      <md-list-item ng-repeat="todo in todos track by todo._id" ng-mouseover="mouseOver = todo._id"
+                    ng-mouseleave="mouseOver = ''">
+        <md-checkbox ng-model="todo.complete" ng-change="modify(todo)"></md-checkbox>
+        <p>{{todo.text}}</p>
+        <md-button class="md-icon-button md-secondary" ng-click="showListBottomSheet(todo, $event)"
+                   aria-label="actions">
+          <md-icon>more_horiz</md-icon>
+        </md-button>
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+    </md-list>
+  </md-card>
+</md-content>

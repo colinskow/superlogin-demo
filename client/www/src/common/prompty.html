@@ -1,0 +1,21 @@
+<md-dialog aria-label="{{dialog.title}}">
+  <form name="dialogForm">
+    <md-dialog-content>
+      <h2>{{dialog.title}}</h2>
+      <md-input-container>
+        <label ng-if="dialog.label">{{dialog.label}}</label>
+        <input type="{{dialog.type}}" ng-model="dialog.value" size="48" required="{{required}}" autofocus
+               aria-label="{{dialog.label || dialog.title}}">
+      </md-input-container>
+    </md-dialog-content>
+    <div class="md-actions" layout="row">
+      <span flex></span>
+      <md-button type="reset" ng-click="cancel()">
+        Cancel
+      </md-button>
+      <md-button type="submit" ng-click="done(dialog.value)" class="md-primary" ng-disabled="dialogForm.$invalid">
+        {{dialog.submitText}}
+      </md-button>
+    </div>
+  </form>
+</md-dialog>

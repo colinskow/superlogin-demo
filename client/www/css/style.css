@@ -1,0 +1,32 @@
+body {
+    height: 100%;
+}
+
+body, .bg-grey {
+    background-color: #E8EAF6;
+}
+
+.error {
+    color: red;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.profile textarea {
+    width: 95%;
+    resize: none;
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+.bottom-space {
+    margin-bottom: 32px;
+}
+
+md-tabs.logintabs {
+    background: white;
+}

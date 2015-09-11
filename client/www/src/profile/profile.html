@@ -1,0 +1,81 @@
+<md-progress-linear md-mode="indeterminate" ng-show="updating"></md-progress-linear>
+
+<md-content class="bg-grey" layout="row" layout-align="space-around start" layout-wrap ng-if="loaded">
+
+  <md-card flex="45" flex-md="70" flex-sm="90">
+    <md-card-content>
+      <h2 class="md-title">Your Account</h2>
+      <md-list>
+        <md-list-item class="md-2-line" ng-click="changeName($event)">
+          <div class="md-list-item-text">
+            <h3>Name</h3>
+
+            <p>{{profile.name}}</p>
+          </div>
+          <md-icon>edit</md-icon>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item class="md-2-line" ng-click="changeEmail($event)">
+          <div class="md-list-item-text">
+            <h3>Email</h3>
+
+            <p>{{profile.email}}</p>
+          </div>
+          <md-icon>edit</md-icon>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item class="md-2-line" ng-click="changePassword($event)">
+          <div class="md-list-item-text">
+            <h3>Password</h3>
+          </div>
+          <md-icon>edit</md-icon>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item class="md-2-line">
+          <div class="md-list-item-text">
+            <h3>Active Sessions</h3>
+
+            <p>{{profile.sessions}}</p>
+          </div>
+        </md-list-item>
+      </md-list>
+    </md-card-content>
+    <div class="md-actions" layout="row" layout-align="end center">
+      <md-button ng-click="destroyUser($event)" class="md-accent">
+        <md-icon>delete</md-icon>
+        Delete Your Account
+      </md-button>
+      <md-button ng-click="logoutOthers()" class="md-secondary">
+        <md-icon>exit_to_app</md-icon>
+        Logout All Other Sessions
+      </md-button>
+    </div>
+  </md-card>
+
+  <md-card ng-repeat="provider in profile.allProviders" flex="45" flex-md="70" flex-sm="90">
+    <md-card-content class="profile">
+      <h2 class="md-title">{{provider.toUpperCase()}}</h2>
+
+      <div ng-if="profile[provider]">
+        <textarea rows="10" ng-model="profile[provider]" readonly></textarea>
+      </div>
+      <p ng-if="!profile[provider]">This provider is not associated with your account.</p>
+    </md-card-content>
+    <div class="md-actions" layout="row" layout-align="end center">
+      <md-button ng-click="link(provider)" ng-if="profile[provider]" class="md-primary">
+        <md-icon>refresh</md-icon>
+        Refresh Profile
+      </md-button>
+      <md-button ng-click="unlink(provider)" ng-if="profile[provider]" class="md-secondary">
+        <md-icon>clear</md-icon>
+        Unlink {{provider.toUpperCase()}}
+      </md-button>
+      <md-button ng-click="link(provider)" ng-if="!profile[provider]" class="md-primary">
+        <md-icon>link</md-icon>
+        Link {{provider.toUpperCase()}}
+      </md-button>
+    </div>
+  </md-card>
+
+
+</md-content>

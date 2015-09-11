@@ -1,0 +1,15 @@
+{
+  "name": "superlogin-demo",
+  "private": true,
+  "dependencies": {
+    "angular": "1.4.5",
+    "angular-animate": "1.4.5",
+    "angular-aria": "1.4.5",
+    "angular-messages": "1.4.5",
+    "angular-ui-router": "~0.2.15",
+    "angular-material": "0.11.0",
+    "pouchdb": "4.0.0",
+    "ng-superlogin": "^0.1.0",
+    "ng-pouch-mirror": "^0.1.0"
+  }
+}

@@ -1,0 +1,39 @@
+<md-toolbar class="md-whiteframe-z1">
+  <div class="md-toolbar-tools">
+    <md-button class="md-icon-button" aria-label="back" ng-if="currentState === 'navbar.profile'" ng-click="todos()">
+      <md-icon>arrow_back</md-icon>
+    </md-button>
+    <h2>
+      <span>{{stateTitle || 'SuperLogin'}}</span>
+    </h2>
+    <span flex></span>
+  <span class="cursor-default">
+    <md-icon ng-show="syncStatus.status === 'syncing'">sync</md-icon>
+    <md-icon ng-show="syncStatus.status === 'stopped'">sync_disabled</md-icon>
+    <md-icon ng-show="syncStatus.status === 'offline'">signal_wifi_off</md-icon>
+    <md-icon ng-show="syncStatus.status === 'error'">sync_problem</md-icon>
+    <md-tooltip>{{syncStatus.status}}</md-tooltip>
+  </span>
+    <md-menu ng-if="superlogin.authenticated">
+      <md-button aria-label="Open user menu" ng-click="$mdOpenMenu()">
+        <md-icon>person</md-icon>
+        <span>{{superlogin.session.user_id}}</span>
+      </md-button>
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-button ng-click="profile()">
+            <md-icon md-menu-align-target>account_circle</md-icon>
+            Profile
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ng-click="logout()">
+            <md-icon md-menu-align-target>highlight_off</md-icon>
+            Sign Out
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+  </div>
+</md-toolbar>
+<md-content ui-view class="bg-grey" flex layout="column"></md-content>

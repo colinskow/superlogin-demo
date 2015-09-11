@@ -1,0 +1,25 @@
+<section ui-view="Register">
+  <md-content>
+    <div layout="row">
+      <div flex-gt-md="30" flex-md="15" flex-sm="5"></div>
+      <md-card flex>
+        <div id="toast" layout-align="center center"></div>
+        <md-card-content>
+          <form ng-submit="resetPassword(reset)">
+            <md-input-container>
+            <md-input-container>
+              <label class="item item-input">Choose a new password</label>
+              <input name="password" type="password" ng-model="reset.password" required>
+            </md-input-container>
+            <md-input-container>
+              <label class="item item-input">Confirm password</label>
+              <input name="password" type="password" ng-model="reset.confirmPassword" required>
+            </md-input-container>
+            <md-button type="submit" class="md-raised md-primary">Reset Password</md-button>
+          </form>
+        </md-card-content>
+      </md-card>
+      <div flex-gt-md="30" flex-md="15" flex-sm="5"></div>
+    </div>
+  </md-content>
+</section>

@@ -1,0 +1,128 @@
+<md-progress-linear md-mode="indeterminate" ng-class="{hidden: !authPending}"></md-progress-linear>
+<div layout="row" layout-align="center start" class="md-padding">
+  <div flex-gt-md="40" flex-md="60" flex-sm="80">
+    <div class="md-whiteframe-z1">
+
+    <md-tabs md-selected="tabIndex" class="md-primary logintabs" md-dynamic-height md-border-bottom>
+
+      <md-tab id="tab1" label="Sign In">
+        <md-content class="md-padding">
+          <div class="error" ng-show="loginError">{{loginError}}</div>
+          <form name="loginForm" ng-submit="login(credentials)">
+            <md-input-container>
+              <label class="item item-input">Username</label>
+              <input name="username" type="text" ng-model="credentials.username" required>
+
+              <div ng-messages="loginForm.username.$error" ng-show="loginForm.username.$touched">
+                <div ng-message="required">No Username? Really?</div>
+              </div>
+            </md-input-container>
+            <md-input-container>
+              <label>Password</label>
+              <input name="password" type="password" ng-model="credentials.password" required minlength="6">
+
+              <div ng-messages="loginForm.password.$error" ng-show="loginForm.password.$touched">
+                <div ng-message="required">Sorry, can't let you in without a password.</div>
+                <div ng-message="minlength">At least 6 characters required.</div>
+              </div>
+            </md-input-container>
+            <div layout="row">
+              <md-button type="button" ng-click="passwordDialog($event)" flex>Forgot Password</md-button>
+              <md-button type="submit" class="md-raised md-primary" ng-disabled="loginForm.$invalid || authPending" flex="50">
+                Login
+              </md-button>
+            </div>
+          </form>
+          <md-divider></md-divider>
+          <h4>Sign in or register with:</h4>
+
+          <div layout="row" layout-align="space-around center" layout-wrap>
+            <md-button class="md-primary" ng-click="socialAuth('facebook')" ng-disabled="authPending" flex="25">
+              Facebook
+            </md-button>
+            <md-button class="md-primary" ng-click="socialAuth('google')" ng-disabled="authPending" flex="25">
+              Google
+            </md-button>
+            <md-button class="md-primary" ng-click="socialAuth('github')" ng-disabled="authPending" flex="25">
+              Github
+            </md-button>
+            <md-button class="md-primary" ng-click="socialAuth('windowslive')" ng-disabled="authPending" flex="30">
+              WindowsLive
+            </md-button>
+            <md-button class="md-primary" ng-click="socialAuth('linkedin')" ng-disabled="authPending" flex="25">
+              LinkedIn
+            </md-button>
+          </div>
+        </md-content>
+      </md-tab>
+
+      <md-tab id="tab2" label="Sign Up">
+        <md-content class="md-padding">
+          <div class="error" ng-show="signupError">{{signupError}}</div>
+          <form name="regForm" ng-submit="register(registration)">
+            <md-input-container>
+              <label class="item item-input">Your full name</label>
+              <input name="name" type="text" ng-model="registration.name" required>
+
+              <div ng-messages="regForm.name.$error" ng-show="regForm.name.$touched">
+                <div ng-message="required">Required.</div>
+              </div>
+            </md-input-container>
+            <md-input-container>
+              <label class="item item-input">Pick a username</label>
+              <input name="username" type="text" ng-model="registration.username"
+                     ng-model-options="{ updateOn: 'default blur', debounce: { default: 2000, blur: 0 } }"
+                     required minlength="3" maxlength="16" ng-pattern="/^[a-z0-9_-]{3,16}$/" check-username>
+
+              <div ng-messages="regForm.username.$error" ng-show="regForm.username.$touched">
+                <div ng-message="required">Required.</div>
+                <div ng-message="minlength">At least 6 characters required.</div>
+                <div ng-message="minlength">No more than 16 characters.</div>
+                <div ng-message="pattern">Illegal characters detected.</div>
+                <div ng-message="checkUsername">Username is already taken.</div>
+              </div>
+            </md-input-container>
+            <md-input-container>
+              <label class="item item-input">Your email</label>
+              <input name="email" type="email" ng-model="registration.email"
+                     ng-model-options="{ updateOn: 'default blur', debounce: { default: 2000, blur: 0 } }"
+                     required check-email>
+
+              <div ng-messages="regForm.email.$error" ng-show="regForm.email.$touched">
+                <div ng-message="required">Required.</div>
+                <div ng-message="email">Not a valid email.</div>
+                <div ng-message="checkEmail">Email is already in use.</div>
+              </div>
+            </md-input-container>
+            <md-input-container>
+              <label class="item item-input">Choose a password</label>
+              <input name="password" type="password" ng-model="registration.password" required minlength="6">
+
+              <div ng-messages="regForm.password.$error" ng-show="regForm.password.$touched">
+                <div ng-message="required">A password is required.</div>
+                <div ng-message="minlength">At least 6 characters required.</div>
+              </div>
+            </md-input-container>
+            <md-input-container>
+              <label class="item item-input">Confirm password</label>
+              <input name="confirmPassword" type="password" ng-model="registration.confirmPassword" required
+                     matches="registration.password">
+
+              <div ng-messages="regForm.confirmPassword.$error" ng-show="regForm.confirmPassword.$touched">
+                <div ng-message="required">Confirm your password.</div>
+                <div ng-message="matches">The passwords do not match.</div>
+              </div>
+            </md-input-container>
+            <md-button type="submit" class="md-raised md-primary" ng-disabled="regForm.$invalid">Register</md-button>
+          </form>
+        </md-content>
+      </md-tab>
+
+    </md-tabs>
+    </div>
+
+    <p><strong>Notice:</strong> This app is for demo purposes only and your data may be deleted at any time. Source code on
+      <a href="https://github.com/colinskow/superlogin-demo" target="_blank">Github</a>.</p>
+
+  </div>
+</div>

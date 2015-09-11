@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <base href="/">
+    <title>SuperLogin Demo</title>
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.11.0/angular-material.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- angularjs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-messages.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-aria.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.11.0/angular-material.min.js"></script>
+    <!-- Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pouchdb/4.0.0/pouchdb.min.js"></script>
+    <script src="lib/pouchdb/dist/pouchdb.memory.min.js"></script>
+    <script src="lib/ng-superlogin/ng-superlogin.js"></script>
+    <script src="lib/ng-pouch-mirror/ng-pouch-mirror.js"></script>
+
+    <!-- your app's js -->
+    <script src="src/app.js"></script>
+    <script src="src/common/common.js"></script>
+    <script src="src/navbar/navbar.js"></script>
+    <script src="src/login/login.js"></script>
+    <script src="src/token/token.js"></script>
+    <script src="src/todos/todos.js"></script>
+    <script src="src/profile/profile.js"></script>
+  </head>
+  <body ng-app="superloginDemo" layout="column">
+    <div ui-view layout="column"></div>
+  </body>
+</html>
