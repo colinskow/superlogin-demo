@@ -29,14 +29,6 @@ app.use(httpsRedirect);
 app.use(express.static(path.join(__dirname, '../client/www')));
 app.use(logger('dev'));
 
-app.use(function(req, res, next) {
-  console.log(req.get('X-Forwarded-Proto'));
-  console.log(req.protocol);
-  var protocol = req.get('X-Forwarded-Proto') || req.protocol + '://';
-  console.log(protocol);
-  next();
-});
-
 // load SuperLogin routes
 var superlogin = new SuperLogin(superloginConfig);
 if(superlogin.config.getItem('providers.windowslive.credentials.clientID'))
