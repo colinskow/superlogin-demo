@@ -31,10 +31,17 @@
           <md-icon>edit</md-icon>
         </md-list-item>
         <md-divider></md-divider>
+        <md-list-item class="md-2-line" ng-click="refreshSession()">
+          <div class="md-list-item-text">
+            <h3>Current Session Expires</h3>
+            <p>{{currentSession.expires}}</p>
+          </div>
+          <md-icon>refresh</md-icon>
+        </md-list-item>
+        <md-divider></md-divider>
         <md-list-item class="md-2-line">
           <div class="md-list-item-text">
             <h3>Active Sessions</h3>
-
             <p>{{profile.sessions}}</p>
           </div>
         </md-list-item>

@@ -8,6 +8,9 @@ angular.module('superloginDemo.profile', [])
 
     function refresh() {
       $scope.updating = true;
+      var session = superlogin.getSession();
+      session.expires = new Date(session.expires).toISOString();
+      $scope.currentSession = session;
       $http.get('/user/profile')
         .then(function(res) {
           $scope.updating = false;
@@ -132,6 +135,17 @@ angular.module('superloginDemo.profile', [])
           toasty(err);
           console.error(err);
         });
+    };
+
+    $scope.refreshSession = function() {
+      superlogin.refresh()
+        .then(function(newSession) {
+          $scope.currentSession = newSession;
+          $scope.currentSession.expires = new Date(newSession.expires).toISOString();
+        }, function(err) {
+          console.log('Session refresh failed', err);
+          toasty('Session refresh failed');
+        })
     };
 
     $scope.destroyUser = function(event) {
