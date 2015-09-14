@@ -2,7 +2,7 @@
 
 angular.module('superloginDemo.todos', ['pouchMirror'])
 
-  .controller('TodosCtrl', function($scope, $rootScope, $mdBottomSheet, $mdDialog, Todos, flashy, toasty, prompty, superlogin) {
+  .controller('TodosCtrl', function($scope, $rootScope, $mdBottomSheet, $mdDialog, Todos, flashy, toasty, prompty) {
 
     $scope.$on('$stateChangeSuccess', function() {
       flashy.get();
