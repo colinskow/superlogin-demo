@@ -1,3 +1,4 @@
+console.log(__dirname);
 module.exports = {
   testMode: {
     noEmail: !process.env.SENDGRID_USERNAME,
@@ -41,7 +42,7 @@ module.exports = {
   userDBs: {
     model: {
       todos: {
-        designDoc: '',
+        designDocs: [],
         permissions: ['_reader', '_writer', '_replicator']
       }
     },
