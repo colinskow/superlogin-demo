@@ -72,12 +72,12 @@
               <label class="item item-input">Pick a username</label>
               <input name="username" type="text" ng-model="registration.username"
                      ng-model-options="{ updateOn: 'default blur', debounce: { default: 2000, blur: 0 } }"
-                     required minlength="3" maxlength="16" ng-pattern="/^[a-z0-9_-]{3,16}$/" check-username>
+                     required minlength="6" maxlength="16" ng-pattern="/^[a-z0-9_-]{6,16}$/" check-username>
 
               <div ng-messages="regForm.username.$error" ng-show="regForm.username.$touched">
                 <div ng-message="required">Required.</div>
                 <div ng-message="minlength">At least 6 characters required.</div>
-                <div ng-message="minlength">No more than 16 characters.</div>
+                <div ng-message="maxlength">No more than 16 characters.</div>
                 <div ng-message="pattern">Illegal characters detected.</div>
                 <div ng-message="checkUsername">Username is already taken.</div>
               </div>
