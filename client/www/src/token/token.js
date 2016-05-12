@@ -12,7 +12,7 @@ angular.module('superloginDemo.tokens', [])
       superlogin.resetPassword($scope.reset)
         .then(function(res) {
           flashy.set('Your password was successfully reset');
-          if(superlogin.authenticated) {
+          if(superlogin.authenticated()) {
             $state.go('navbar.todos');
           } else {
             $state.go('navbar.login');
@@ -39,7 +39,7 @@ angular.module('superloginDemo.tokens', [])
     }
 
     function quit() {
-      if (superlogin.authenticated) {
+      if (superlogin.authenticated()) {
         $state.go('navbar.todos');
       } else {
         $state.go('navbar.login');
