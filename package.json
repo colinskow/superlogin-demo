@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "A sample single page app using SuperLogin, AngularJS, and PouchDB",
   "scripts": {
-    "postinstall": "node ./node_modules/bower/bin/bower install",
+    "postinstall": "bower install",
     "start": "node ./server/bin/www"
   },
   "keywords": [
