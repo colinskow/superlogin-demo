@@ -27,7 +27,7 @@ For issues and feature requests visit the [issue tracker](https://github.com/col
 - Register with a PaaS (Platform as a service) like [Heroku](https://www.heroku.com/).
 - Create app & deploy superlogin-demo, see: [Heroku: Getting started with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
 - Enable the [Redis addon](https://elements.heroku.com/addons/heroku-redis).
-- In the app's settings, set the Config Varialbles, see: `env.example.sh`.
+- In the app's settings, set the Config Variables, see: `env.example.sh`.
   - `DB_HOST`: `yourcloudantusername.cloudant.com`
   - `DB_USER`: `yourcloudantusername`
   - `DB_PASS`: `yourcloudantpassword`
