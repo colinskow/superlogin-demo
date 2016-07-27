@@ -15,7 +15,6 @@ For issues and feature requests visit the [issue tracker](https://github.com/col
 ## How to use
 
 1. `npm install`
-2. `bower install`
 3. (Optional) follow the instructions in `env.example.sh` to configure your access credentials
 4. Ensure Redis and CouchDB are running
 5. `npm start`
@@ -36,7 +35,7 @@ For issues and feature requests visit the [issue tracker](https://github.com/col
 
 ##### [SuperLogin](https://github.com/colinskow/superlogin)
 Powerful authentication for APIs and single page apps using the CouchDB ecosystem which supports a variety of providers.
-  
+
 ##### [NG-SuperLogin](https://github.com/colinskow/ng-superlogin)
 Angular bindings for the SuperLogin project.
 
